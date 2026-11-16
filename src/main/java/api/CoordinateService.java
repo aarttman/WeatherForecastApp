@@ -21,7 +21,6 @@ public class CoordinateService {
 
     public String fetchCoordinates(String placeName) throws InterruptedException, IOException {
         String apiCall = "http://api.openweathermap.org/geo/1.0/direct?q="+placeName+"&limit=3&appid=" + this.apiKey;
-//        String apiCall = "http://api.openweathermap.org/geo/1.0/direct?q="+placeName+"&limit=3&appid=330ef36e99056a3e6722d2b785a4d3d4";
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(apiCall))
