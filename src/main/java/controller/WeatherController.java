@@ -1,14 +1,20 @@
 package controller;
 
-import api.WeatherApiService;
 import api.CoordinateService;
-import util.ApiConfig;
+import parser.GeocodingParser;
+
 public class WeatherController {
     public static void main(String[] args) throws Exception{
+        GeocodingParser parser = new GeocodingParser();
         CoordinateService service = new CoordinateService();
 
-        service.fetchCoordinates("London");
+        String search = "London";
+        service.fetchCoordinates(search);
 
-//        System.out.println(ApiConfig.GEOCODING_KEY);
+
+
+        String jsonString = "";
+        parser.parseWeatherData("search", jsonString);
+
    }
 }
