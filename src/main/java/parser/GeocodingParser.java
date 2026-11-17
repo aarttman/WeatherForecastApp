@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import model.WeatherObject;
+import model.CoordinateObject;
 
 import java.io.IOException;
 
@@ -17,25 +17,14 @@ public class GeocodingParser {
         this.objectMapper = new ObjectMapper();
     }
 
-    public WeatherObject parseWeatherData(String placeName, String jsonString) throws JsonMappingException, JsonParseException, IOException{
+    public void parseCoordinateData(String jsonString, CoordinateObject coordinateObject) throws JsonMappingException, JsonParseException,  IOException{
         JsonNode jsonNode = this.objectMapper.readTree(jsonString);
-        WeatherObject weatherObject = new WeatherObject(placeName);
 
-        String currentWeather = jsonNode.get("weather").get(0).get("main").asText();
-        weatherObject.setCurrentWeather(currentWeather);
+        double latitude = jsonNode.get(0).get("lat").asDouble();
+        coordinateObject.setLatitude(latitude);
 
-        String currentWeatherDescription = jsonNode.get("weather").get(0).get("description").asText();
-        weatherObject.setCurrentWeatherDescription(currentWeatherDescription);
-
-        double temperature = jsonNode.get("main").get("temp").asDouble();
-        weatherObject.setTemperature(temperature);
-
-        double feelsLikeTemperature = jsonNode.get("main").get("feels_like").asDouble();
-        weatherObject.setFeelsLikeTemperature(feelsLikeTemperature);
-
-        int humidity = jsonNode.get("main").get("humiditiy").asInt();
-        weatherObject.setHumidity(humidity);
-
-        return weatherObject;
+        double longitude = jsonNode.get(0).get("lon").asDouble();
+        coordinateObject.setLongitude(longitude);
     }
+
 }

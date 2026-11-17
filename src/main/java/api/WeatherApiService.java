@@ -1,5 +1,6 @@
 package api;
 
+import java.io.IOException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -25,7 +26,7 @@ public class WeatherApiService {
         this.client = HttpClient.newHttpClient();
     }
 
-    public String fetchWeatherData() throws Exception {
+    public String fetchWeatherData() throws InterruptedException, IOException {
 
         String apiCall = "https://api.openweathermap.org/data/2.5/weather?lat="+this.coordinates.getLatitude()+"&lon="+this.coordinates.getLongitude()+"&appid="+this.apiKey;
 
