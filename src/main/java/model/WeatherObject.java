@@ -12,9 +12,9 @@ public class WeatherObject {
         this.placeName = placeName;
     }
 
-    public void setPlaceName(String placeName) {
-        this.placeName = placeName;
-    }
+//    public void setPlaceName(String placeName) {
+//        this.placeName = placeName;
+//    }
 
     public void setCurrentWeather(String currentWeather) {
         this.currentWeather = currentWeather;
