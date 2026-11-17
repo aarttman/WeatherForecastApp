@@ -42,22 +42,22 @@ public class WeatherController {
     }
 
     @FXML protected void handleSearchAgainButtonAction(ActionEvent event) {
-//        try {
-//
-//            FXMLLoader loader = new FXMLLoader(
-//                    getClass().getResource("/view/weather.fxml")
-//            );
-//
-//            Parent root = loader.load();
-//
-//            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//
-//            stage.setScene(new Scene(root));
-//            stage.show();
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/weatherview.fxml")
+            );
+
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            stage.setScene(new Scene(root, 900, 600));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML protected void handleFetchButton(ActionEvent event) throws Exception{
