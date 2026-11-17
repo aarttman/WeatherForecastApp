@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+        <?import java.net.*?>
+        <?import javafx.geometry.*?>
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.*?>
+        <?import javafx.scene.text.*?>
+
+<GridPane id="gridPane" fx:controller="controller.WeatherController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="25" vgap="25" styleClass="root">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <Text text="Weather Forecast" GridPane.columnIndex="0" GridPane.rowIndex="0" id="titleText"></Text>
+
+    <TextField fx:id="searchTextField" text="search" GridPane.columnIndex="1" GridPane.rowIndex="0" id="searchTextField"></TextField>
+
+    <Button fx:id="fetchButton" text="Fetch" GridPane.columnIndex="2" GridPane.rowIndex="0" id="fetchButton"></Button>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Text fx:id="cityNameText" text="City Name" id="cityName"></Text>
+        <Text fx:id="currentWeatherText" text="Weather: rain" id="currentWeather"></Text>
+        <Text fx:id="currentWeatherDescriptionText" text="Weather Description: rain" id="currentWeatherDescription"></Text>
+    </VBox>
+
+    <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Text fx:id="temperatureText" text="Temperature: 19C" id="temperature"></Text>
+        <Text fx:id="feelsLikeTemperatureText" text="Feels Like: 25C" id="feelsLikeTemperature"></Text>
+    </VBox>
+
+    <Text fx:id="humidityText" text="Humidity" GridPane.columnIndex="2" GridPane.rowIndex="1" id="humidity"></Text>
+
+    <HBox spacing="10" alignment="bottom_right"  GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <Button fx:id="searchAgainButton" text="Search Again" onAction="#handleSearchAgainButtonAction" id="searchAgainButton"></Button>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+
+</GridPane>

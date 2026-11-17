@@ -1,26 +1,28 @@
 package controller;
 
 import api.CoordinateService;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import model.WeatherObject;
 import parser.WeatherParser;
 import service.WeatherService;
 
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+
+import java.net.URL;
 
 public class WeatherController {
-    public static void main(String[] args) throws Exception {
-        WeatherService service = new WeatherService();
 
-        String search = "London";
-
-        WeatherObject weatherObject = service.getWeather(search);
-
-        System.out.println(weatherObject.getPlaceName());
-        System.out.println(weatherObject.getCurrentWeather());
-        System.out.println(weatherObject.getCurrentWeatherDescription());
-        System.out.println(weatherObject.getTemperature());
-        System.out.println(weatherObject.getFeelsLikeTemperature());
-        System.out.println(weatherObject.getHumidity());
-
-
-   }
+    @FXML protected void handleSearchAgainButtonAction(ActionEvent event) {
+        System.out.println("hello world");
+    }
 }
