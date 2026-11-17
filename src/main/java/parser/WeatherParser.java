@@ -26,10 +26,12 @@ public class WeatherParser {
         weatherObject.setCurrentWeatherDescription(currentWeatherDescription);
 
         double temperature = jsonNode.get("main").get("temp").asDouble();
-        weatherObject.setTemperature(temperature);
+        double temperatureCelcius = temperature - 273;
+        weatherObject.setTemperature(temperatureCelcius);
 
         double feelsLikeTemperature = jsonNode.get("main").get("feels_like").asDouble();
-        weatherObject.setFeelsLikeTemperature(feelsLikeTemperature);
+        double feelsLikeCelcius = feelsLikeTemperature - 273;
+        weatherObject.setFeelsLikeTemperature(feelsLikeCelcius);
 
         int humidity = jsonNode.get("main").get("humidity").asInt();
         weatherObject.setHumidity(humidity);

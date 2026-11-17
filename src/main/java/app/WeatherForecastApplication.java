@@ -11,10 +11,10 @@ public class WeatherForecastApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/weatherview.fxml"));
-        Scene scene = new Scene(root, 720, 720);
+        Scene scene = new Scene(root, 900, 600);
 
         stage.setScene(scene);
-        stage.setTitle("Weather Forecasting Application");
+        stage.setTitle("Weather Forecast Application");
         stage.show();
     }
 
