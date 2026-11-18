@@ -42,7 +42,3 @@ Paste these build dependencies in your ```pom.xml``` file.
 ```
 
 Configure your JavaFx and compile the ```WeatherForecastApplication.java``` file.
-
-
-## Author
-Aatman
